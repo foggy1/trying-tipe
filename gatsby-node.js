@@ -1,8 +1,9 @@
 require('dotenv').config()
 const fetch = require('./fetch-tipe.js')
+const fs = require('fs')
 
 fetch()
-  .then(docs => console.log(docs))
+  .then(docs => fs.writeFile('src/data/tipePosts.json', JSON.stringify(docs), 'utf8'))
   .catch(err => console.log(err))
 /**
  * Implement Gatsby's Node APIs in this file.

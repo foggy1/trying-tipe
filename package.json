@@ -9,6 +9,8 @@
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
+    "gatsby-source-filesystem": "^1.5.35",
+    "gatsby-transformer-json": "^1.0.17",
     "react-helmet": "^5.2.0",
     "serve": "^6.5.6",
     "tipe-loader": "^1.1.5"
