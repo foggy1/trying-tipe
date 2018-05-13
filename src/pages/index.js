@@ -4,13 +4,11 @@ import { YourDoc } from '../tipe/jumanji.tipe'
 import test, { SomeFolder } from '../tipe/posts.tipe'
 
 const IndexPage = props => {
-  const posts = props.data.allTipePostsJson.edges.map(e => e.node)
+  const posts = props.data.allTipePostsJson.edges.reverse().map(e => e.node)
   return (
       <div>
-        <h1>Hi people</h1>
-        <h2 className="subtitle">{YourDoc.block}</h2>
-        <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
+        <h1>{YourDoc.block}</h1>
+      <p>{YourDoc.paragraph}</p>
       {posts.map(p => {
         return(
           <div>
