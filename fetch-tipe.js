@@ -1,5 +1,7 @@
 const YOUR_FOLDER_ID = '5af7b4536280100013952133'
 const axios = require('axios')
+const remark = require('remark')
+const html = require('remark-html')
 
 var variables = { id: YOUR_FOLDER_ID }
 var query = `
@@ -64,10 +66,23 @@ const fetch = () => {
       'Tipe-Id': process.env.TIPE_ORG_SECRET
     },
   })
-    .then(({data: {data}}) => {
-    return data.Folder.documents
-  })
+    .then(async ({data: {data}}) => {
+      const docs = await Promise.all(data.Folder.documents.map(doc => parseMarkdown(doc)))
+      return docs
+    })
     .catch(err => console.log(err))
 }
+
+const parseMarkdown = (doc) => new Promise((resolve, reject) => {
+  remark()
+    .use(html)
+    .process(doc.body, function (err, file) {
+      if (err) {
+        reject(err)
+      }
+      resolve({ ...doc, body: file.contents })
+
+    })
+})
 
 module.exports = fetch

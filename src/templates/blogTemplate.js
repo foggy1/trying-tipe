@@ -1,8 +1,16 @@
 import React from 'react'
-
 const BlogPost = props => {
+  const { title, body, author: {bio} } = props.data.tipePostsJson
+  debugger
   return (
-      <h1>{props.data.tipePostsJson.title}</h1>
+    <div>
+      <h1>{title}</h1>
+      <div dangerouslySetInnerHTML={{ __html: body }} />
+      <br />
+      <br />
+      <hr />
+      <span>{bio}</span>
+    </div>
   )
 }
 
@@ -12,7 +20,10 @@ export const query = graphql`
   query GetBlogPost ($urlSlug: String!) {
     tipePostsJson(urlSlug: { eq: $urlSlug }) {
       title
-      urlSlug
+      body
+      author {
+        bio
+      }
     }
   }
 `
