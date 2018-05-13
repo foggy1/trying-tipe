@@ -1,0 +1,12 @@
+query Tipe {
+  YourDoc: NotAGoodTemplate(id: "5add4b9682ac270013c02a08") {
+    block
+    _meta {
+      id
+      name
+      updatedAt
+      createdAt
+      published
+    }
+  }
+}

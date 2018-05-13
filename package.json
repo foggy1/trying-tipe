@@ -9,6 +9,7 @@
     "gatsby-link": "^1.6.40",
     "gatsby-plugin-react-helmet": "^2.0.10",
     "react-helmet": "^5.2.0",
+    "serve": "^6.5.6",
     "tipe-loader": "^1.1.5"
   },
   "keywords": [
@@ -20,7 +21,8 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve public/"
   },
   "devDependencies": {
     "prettier": "^1.12.0"
