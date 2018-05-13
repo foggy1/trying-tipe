@@ -1,4 +1,9 @@
 require('dotenv').config()
+const fetch = require('./fetch-tipe.js')
+
+fetch()
+  .then(docs => console.log(docs))
+  .catch(err => console.log(err))
 /**
  * Implement Gatsby's Node APIs in this file.
  *

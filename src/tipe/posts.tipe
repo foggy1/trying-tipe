@@ -1,0 +1,14 @@
+query API {
+  SomeFolder: Folder(id: "5af7b4536280100013952133") {
+    id
+    name
+    documents {
+         _meta {
+           id
+         }
+         ... on ArticleExample {
+           title
+         }
+     }
+  }
+}

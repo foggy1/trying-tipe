@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "author": "Austin Lanari <austin.lanari@gmail.com>",
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "^5.0.1",
     "gatsby": "^1.9.247",
     "gatsby-link": "^1.6.40",
